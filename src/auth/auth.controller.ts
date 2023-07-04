@@ -8,12 +8,11 @@ export class AuthController {
 
   @Post('signup')
   async signup(@Body() authDto: AuthDto) {
-    console.log(authDto);
-    return this.authService.signup();
+    return this.authService.signup(authDto);
   }
 
   @Post('signin')
-  async signin() {
-    return this.authService.signin();
+  async signin(@Body() authDto: AuthDto) {
+    return this.authService.signin(authDto);
   }
 }

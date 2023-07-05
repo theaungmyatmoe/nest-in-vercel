@@ -15,8 +15,14 @@
         "POST",
         "PUT",
         "PATCH",
-        "DELETE"
+        "DELETE",
+        "OPTIONS"
       ]
     }
-  ]
+  ],
+  "env": {
+    "DATABASE_URL": "postgres://amm834:fT8wKmvAkg1U@ep-soft-credit-377725-pooler.ap-southeast-1.aws.neon.tech/neondb?pgbouncer=true&connect_timeout=10",
+    "DIRECT_URL": "postgres://amm834:fT8wKmvAkg1U@ep-soft-credit-377725.ap-southeast-1.aws.neon.tech/neondb?connect_timeout=10",
+    "JWT_SECRET": "jwtsecret123"
+  }
 }

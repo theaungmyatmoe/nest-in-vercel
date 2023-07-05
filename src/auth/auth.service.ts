@@ -10,14 +10,14 @@ import { ConfigService } from '@nestjs/config';
 export class AuthService {
   constructor(
     private configService: ConfigService,
-    private prisma: PrismaService,
+    private prismaService: PrismaService,
     private jwtService: JwtService,
   ) {}
 
   async signup(authDto: AuthDto) {
     try {
       const hash = await argon.hash(authDto.password);
-      const user = await this.prisma.user.create({
+      const user = await this.prismaService.user.create({
         data: {
           email: authDto.email,
           password: hash,
@@ -32,7 +32,7 @@ export class AuthService {
   }
 
   async signin(authDto: AuthDto) {
-    const user = await this.prisma.user.findUnique({
+    const user = await this.prismaService.user.findUnique({
       where: {
         email: authDto.email,
       },

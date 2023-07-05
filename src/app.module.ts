@@ -6,6 +6,7 @@ import { AuthModule } from './auth/auth.module';
 import { BookmarksModule } from './bookmarks/bookmarks.module';
 import { PrismaModule } from './prisma/prisma.module';
 import { ConfigModule } from '@nestjs/config';
+import { PingPongModule } from './ping-pong/ping-pong.module';
 
 @Module({
   imports: [
@@ -16,6 +17,7 @@ import { ConfigModule } from '@nestjs/config';
     AuthModule,
     BookmarksModule,
     PrismaModule,
+    PingPongModule,
   ],
   controllers: [AppController],
   providers: [AppService],
